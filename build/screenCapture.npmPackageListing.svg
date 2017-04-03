@@ -1,31 +1,31 @@
 <svg height="446" width="720" xmlns="http://www.w3.org/2000/svg">
 <rect height="446" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">  0.  2017-04-03 09:15:19 +0000   222923 byte  .</tspan>
-<tspan x="10" y="42">  1.  2017-04-03 09:15:19 +0000     2665 byte  LICENSE</tspan>
-<tspan x="10" y="58">  2.  2017-04-03 09:15:19 +0000    10149 byte  README.md</tspan>
-<tspan x="10" y="74">  3.  2017-04-03 09:15:19 +0000      877 byte  bin/bcrypt</tspan>
-<tspan x="10" y="90">  4.  2017-04-03 09:15:19 +0000      632 byte  bower.json</tspan>
-<tspan x="10" y="106">  5.  2017-04-03 09:15:19 +0000      677 byte  dist/README.md</tspan>
-<tspan x="10" y="122">  6.  2017-04-03 09:15:19 +0000    56908 byte  dist/bcrypt.js</tspan>
-<tspan x="10" y="138">  7.  2017-04-03 09:15:19 +0000    21634 byte  dist/bcrypt.min.js</tspan>
-<tspan x="10" y="154">  8.  2017-04-03 09:15:19 +0000     9443 byte  dist/bcrypt.min.js.gz</tspan>
-<tspan x="10" y="170">  9.  2017-04-03 09:15:19 +0000    42466 byte  dist/bcrypt.min.map</tspan>
-<tspan x="10" y="186"> 10.  2017-04-03 09:15:19 +0000     2178 byte  externs/bcrypt.js</tspan>
-<tspan x="10" y="202"> 11.  2017-04-03 09:15:19 +0000     1480 byte  externs/minimal-env.js</tspan>
-<tspan x="10" y="218"> 12.  2017-04-03 09:15:19 +0000     1604 byte  index.js</tspan>
-<tspan x="10" y="234"> 13.  2017-04-03 09:15:19 +0000     3382 byte  package.json</tspan>
-<tspan x="10" y="250"> 14.  2017-04-03 09:15:19 +0000     1316 byte  scripts/build.js</tspan>
-<tspan x="10" y="266"> 15.  2017-04-03 09:15:19 +0000    11358 byte  src/bcrypt.js</tspan>
-<tspan x="10" y="282"> 16.  2017-04-03 09:15:19 +0000    26293 byte  src/bcrypt/impl.js</tspan>
-<tspan x="10" y="298"> 17.  2017-04-03 09:15:19 +0000      407 byte  src/bcrypt/prng/README.md</tspan>
-<tspan x="10" y="314"> 18.  2017-04-03 09:15:19 +0000     4522 byte  src/bcrypt/prng/accum.js</tspan>
-<tspan x="10" y="330"> 19.  2017-04-03 09:15:19 +0000     5405 byte  src/bcrypt/prng/isaac.js</tspan>
-<tspan x="10" y="346"> 20.  2017-04-03 09:15:19 +0000      907 byte  src/bcrypt/util.js</tspan>
-<tspan x="10" y="362"> 21.  2017-04-03 09:15:19 +0000     3613 byte  src/bcrypt/util/base64.js</tspan>
-<tspan x="10" y="378"> 22.  2017-04-03 09:15:19 +0000      641 byte  src/bower.json</tspan>
-<tspan x="10" y="394"> 23.  2017-04-03 09:15:19 +0000     2286 byte  src/wrap.js</tspan>
-<tspan x="10" y="410"> 24.  2017-04-03 09:15:19 +0000     4833 byte  tests/quickbrown.txt</tspan>
-<tspan x="10" y="426"> 25.  2017-04-03 09:15:19 +0000     7247 byte  tests/suite.js</tspan>
+<tspan x="10" y="26">  0.  2017-04-03 09:16:32 +0000   222923 byte  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-03 09:16:32 +0000     2665 byte  LICENSE</tspan>
+<tspan x="10" y="58">  2.  2017-04-03 09:16:32 +0000    10149 byte  README.md</tspan>
+<tspan x="10" y="74">  3.  2017-04-03 09:16:32 +0000      877 byte  bin/bcrypt</tspan>
+<tspan x="10" y="90">  4.  2017-04-03 09:16:32 +0000      632 byte  bower.json</tspan>
+<tspan x="10" y="106">  5.  2017-04-03 09:16:32 +0000      677 byte  dist/README.md</tspan>
+<tspan x="10" y="122">  6.  2017-04-03 09:16:32 +0000    56908 byte  dist/bcrypt.js</tspan>
+<tspan x="10" y="138">  7.  2017-04-03 09:16:32 +0000    21634 byte  dist/bcrypt.min.js</tspan>
+<tspan x="10" y="154">  8.  2017-04-03 09:16:32 +0000     9443 byte  dist/bcrypt.min.js.gz</tspan>
+<tspan x="10" y="170">  9.  2017-04-03 09:16:32 +0000    42466 byte  dist/bcrypt.min.map</tspan>
+<tspan x="10" y="186"> 10.  2017-04-03 09:16:32 +0000     2178 byte  externs/bcrypt.js</tspan>
+<tspan x="10" y="202"> 11.  2017-04-03 09:16:32 +0000     1480 byte  externs/minimal-env.js</tspan>
+<tspan x="10" y="218"> 12.  2017-04-03 09:16:32 +0000     1604 byte  index.js</tspan>
+<tspan x="10" y="234"> 13.  2017-04-03 09:16:32 +0000     3382 byte  package.json</tspan>
+<tspan x="10" y="250"> 14.  2017-04-03 09:16:32 +0000     1316 byte  scripts/build.js</tspan>
+<tspan x="10" y="266"> 15.  2017-04-03 09:16:32 +0000    11358 byte  src/bcrypt.js</tspan>
+<tspan x="10" y="282"> 16.  2017-04-03 09:16:32 +0000    26293 byte  src/bcrypt/impl.js</tspan>
+<tspan x="10" y="298"> 17.  2017-04-03 09:16:32 +0000      407 byte  src/bcrypt/prng/README.md</tspan>
+<tspan x="10" y="314"> 18.  2017-04-03 09:16:32 +0000     4522 byte  src/bcrypt/prng/accum.js</tspan>
+<tspan x="10" y="330"> 19.  2017-04-03 09:16:32 +0000     5405 byte  src/bcrypt/prng/isaac.js</tspan>
+<tspan x="10" y="346"> 20.  2017-04-03 09:16:32 +0000      907 byte  src/bcrypt/util.js</tspan>
+<tspan x="10" y="362"> 21.  2017-04-03 09:16:32 +0000     3613 byte  src/bcrypt/util/base64.js</tspan>
+<tspan x="10" y="378"> 22.  2017-04-03 09:16:32 +0000      641 byte  src/bower.json</tspan>
+<tspan x="10" y="394"> 23.  2017-04-03 09:16:32 +0000     2286 byte  src/wrap.js</tspan>
+<tspan x="10" y="410"> 24.  2017-04-03 09:16:32 +0000     4833 byte  tests/quickbrown.txt</tspan>
+<tspan x="10" y="426"> 25.  2017-04-03 09:16:32 +0000     7247 byte  tests/suite.js</tspan>
 </text>
 </svg>
