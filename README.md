@@ -1,17 +1,13 @@
-# api-documentation for  [bcryptjs (v2.4.3)](https://github.com/dcodeIO/bcrypt.js#readme)  [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-bcryptjs.svg)](https://travis-ci.org/npmdoc/node-npmdoc-bcryptjs)
+# api documentation for  [bcryptjs (v2.4.3)](https://github.com/dcodeIO/bcrypt.js#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-bcryptjs.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-bcryptjs) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-bcryptjs.svg)](https://travis-ci.org/npmdoc/node-npmdoc-bcryptjs)
 #### Optimized bcrypt in plain JavaScript with zero dependencies. Compatible to 'bcrypt'.
 
 [![NPM](https://nodei.co/npm/bcryptjs.png?downloads=true)](https://www.npmjs.com/package/bcryptjs)
 
-# html version
+[![apidoc](https://npmdoc.github.io/node-npmdoc-bcryptjs/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-bcryptjs_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-bcryptjs/build..beta..travis-ci.org/apidoc.html)
 
-- [https://npmdoc.github.io/node-npmdoc-bcryptjs/build..beta..travis-ci.org/apidoc.html](https://npmdoc.github.io/node-npmdoc-bcryptjs/build..beta..travis-ci.org/apidoc.html)
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-bcryptjs/build/screenCapture.npmPackageListing.svg)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-bcryptjs/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-bcryptjs_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-bcryptjs/build..beta..travis-ci.org/apidoc.html)
-
-# package listing
-
-![package-listing](https://npmdoc.github.io/node-npmdoc-bcryptjs/build/screen-capture.npmPackageListing.svg)
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-bcryptjs/build/screenCapture.npmPackageDependencyTree.svg)
 
 
 
