@@ -1,0 +1,615 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/dcodeIO/bcrypt.js#readme">bcryptjs (v2.4.3)</a>
+</h1>
+<h4>Optimized bcrypt in plain JavaScript with zero dependencies. Compatible to 'bcrypt'.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bcryptjs">module bcryptjs</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bcryptjs.compare">
+            function <span class="apidocSignatureSpan">bcryptjs.</span>compare
+            <span class="apidocSignatureSpan">(s, hash, callback, progressCallback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bcryptjs.compareSync">
+            function <span class="apidocSignatureSpan">bcryptjs.</span>compareSync
+            <span class="apidocSignatureSpan">(s, hash)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bcryptjs.decodeBase64">
+            function <span class="apidocSignatureSpan">bcryptjs.</span>decodeBase64
+            <span class="apidocSignatureSpan">(s, len)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bcryptjs.encodeBase64">
+            function <span class="apidocSignatureSpan">bcryptjs.</span>encodeBase64
+            <span class="apidocSignatureSpan">(b, len)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bcryptjs.genSalt">
+            function <span class="apidocSignatureSpan">bcryptjs.</span>genSalt
+            <span class="apidocSignatureSpan">(rounds, seed_length, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bcryptjs.genSaltSync">
+            function <span class="apidocSignatureSpan">bcryptjs.</span>genSaltSync
+            <span class="apidocSignatureSpan">(rounds, seed_length)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bcryptjs.getRounds">
+            function <span class="apidocSignatureSpan">bcryptjs.</span>getRounds
+            <span class="apidocSignatureSpan">(hash)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bcryptjs.getSalt">
+            function <span class="apidocSignatureSpan">bcryptjs.</span>getSalt
+            <span class="apidocSignatureSpan">(hash)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bcryptjs.hash">
+            function <span class="apidocSignatureSpan">bcryptjs.</span>hash
+            <span class="apidocSignatureSpan">(s, salt, callback, progressCallback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bcryptjs.hashSync">
+            function <span class="apidocSignatureSpan">bcryptjs.</span>hashSync
+            <span class="apidocSignatureSpan">(s, salt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bcryptjs.setRandomFallback">
+            function <span class="apidocSignatureSpan">bcryptjs.</span>setRandomFallback
+            <span class="apidocSignatureSpan">(random)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bcryptjs" id="apidoc.module.bcryptjs">module bcryptjs</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bcryptjs.compare" id="apidoc.element.bcryptjs.compare">
+        function <span class="apidocSignatureSpan">bcryptjs.</span>compare
+        <span class="apidocSignatureSpan">(s, hash, callback, progressCallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compare = function (s, hash, callback, progressCallback) {
+
+    function _async(callback) {
+        if (typeof s !== "string" || typeof hash !== "string") {
+            nextTick(callback.bind(this, Error("Illegal arguments: "+(typeof s)+', '+(typeof hash))));
+            return;
+        }
+        if (hash.length !== 60) {
+            nextTick(callback.bind(this, null, false));
+            return;
+        }
+        bcrypt.hash(s, hash.substr(0, 29), function(err, comp) {
+            if (err)
+                callback(err);
+            else
+                callback(null, safeStringCompare(comp, hash));
+        }, progressCallback);
+    }
+
+    if (callback) {
+        if (typeof callback !== 'function')
+            throw Error("Illegal callback: "+typeof(callback));
+        _async(callback);
+    } else
+        return new Promise(function(resolve, reject) {
+            _async(function(err, res) {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+                resolve(res);
+            });
+        });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+To check a password:
+
+```javascript
+// Load hash from your password DB.
+bcrypt.<span class="apidocCodeKeywordSpan">compare</span>("B4c0/\/", hash, function(err, res) {
+    // res === true
+});
+bcrypt.compare("not_bacon", hash, function(err, res) {
+    // res === false
+});
+
+// As of bcryptjs 2.4.0, compare returns a promise if callback is omitted:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bcryptjs.compareSync" id="apidoc.element.bcryptjs.compareSync">
+        function <span class="apidocSignatureSpan">bcryptjs.</span>compareSync
+        <span class="apidocSignatureSpan">(s, hash)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compareSync = function (s, hash) {
+    if (typeof s !== "string" || typeof hash !== "string")
+        throw Error("Illegal arguments: "+(typeof s)+', '+(typeof hash));
+    if (hash.length !== 60)
+        return false;
+    return safeStringCompare(bcrypt.hashSync(s, hash.substr(0, hash.length-31)), hash);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Store hash in your password DB.
+```
+
+To check a password:
+
+```javascript
+// Load hash from your password DB.
+bcrypt.<span class="apidocCodeKeywordSpan">compareSync</span>("B4c0/\/", hash); // true
+bcrypt.compareSync("not_bacon", hash); // false
+```
+
+Auto-gen a salt and hash:
+
+```javascript
+var hash = bcrypt.hashSync('bacon', 8);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bcryptjs.decodeBase64" id="apidoc.element.bcryptjs.decodeBase64">
+        function <span class="apidocSignatureSpan">bcryptjs.</span>decodeBase64
+        <span class="apidocSignatureSpan">(s, len)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function base64_decode(s, len) {
+    var off = 0,
+        slen = s.length,
+        olen = 0,
+        rs = [],
+        c1, c2, c3, c4, o, code;
+    if (len &lt;= 0)
+        throw Error("Illegal len: "+len);
+    while (off &lt; slen - 1 &amp;&amp; olen &lt; len) {
+        code = s.charCodeAt(off++);
+        c1 = code &lt; BASE64_INDEX.length ? BASE64_INDEX[code] : -1;
+        code = s.charCodeAt(off++);
+        c2 = code &lt; BASE64_INDEX.length ? BASE64_INDEX[code] : -1;
+        if (c1 == -1 || c2 == -1)
+            break;
+        o = (c1 &lt;&lt; 2) &gt;&gt;&gt; 0;
+        o |= (c2 &amp; 0x30) &gt;&gt; 4;
+        rs.push(stringFromCharCode(o));
+        if (++olen &gt;= len || off &gt;= slen)
+            break;
+        code = s.charCodeAt(off++);
+        c3 = code &lt; BASE64_INDEX.length ? BASE64_INDEX[code] : -1;
+        if (c3 == -1)
+            break;
+        o = ((c2 &amp; 0x0f) &lt;&lt; 4) &gt;&gt;&gt; 0;
+        o |= (c3 &amp; 0x3c) &gt;&gt; 2;
+        rs.push(stringFromCharCode(o));
+        if (++olen &gt;= len || off &gt;= slen)
+            break;
+        code = s.charCodeAt(off++);
+        c4 = code &lt; BASE64_INDEX.length ? BASE64_INDEX[code] : -1;
+        o = ((c3 &amp; 0x03) &lt;&lt; 6) &gt;&gt;&gt; 0;
+        o |= c4;
+        rs.push(stringFromCharCode(o));
+        ++olen;
+    }
+    var res = [];
+    for (off = 0; off&lt;olen; off++)
+        res.push(rs[off].charCodeAt(0));
+    return res;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bcryptjs.encodeBase64" id="apidoc.element.bcryptjs.encodeBase64">
+        function <span class="apidocSignatureSpan">bcryptjs.</span>encodeBase64
+        <span class="apidocSignatureSpan">(b, len)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function base64_encode(b, len) {
+    var off = 0,
+        rs = [],
+        c1, c2;
+    if (len &lt;= 0 || len &gt; b.length)
+        throw Error("Illegal len: "+len);
+    while (off &lt; len) {
+        c1 = b[off++] &amp; 0xff;
+        rs.push(BASE64_CODE[(c1 &gt;&gt; 2) &amp; 0x3f]);
+        c1 = (c1 &amp; 0x03) &lt;&lt; 4;
+        if (off &gt;= len) {
+            rs.push(BASE64_CODE[c1 &amp; 0x3f]);
+            break;
+        }
+        c2 = b[off++] &amp; 0xff;
+        c1 |= (c2 &gt;&gt; 4) &amp; 0x0f;
+        rs.push(BASE64_CODE[c1 &amp; 0x3f]);
+        c1 = (c2 &amp; 0x0f) &lt;&lt; 2;
+        if (off &gt;= len) {
+            rs.push(BASE64_CODE[c1 &amp; 0x3f]);
+            break;
+        }
+        c2 = b[off++] &amp; 0xff;
+        c1 |= (c2 &gt;&gt; 6) &amp; 0x03;
+        rs.push(BASE64_CODE[c1 &amp; 0x3f]);
+        rs.push(BASE64_CODE[c2 &amp; 0x3f]);
+    }
+    return rs.join('');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bcryptjs.genSalt" id="apidoc.element.bcryptjs.genSalt">
+        function <span class="apidocSignatureSpan">bcryptjs.</span>genSalt
+        <span class="apidocSignatureSpan">(rounds, seed_length, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">genSalt = function (rounds, seed_length, callback) {
+    if (typeof seed_length === 'function')
+        callback = seed_length,
+        seed_length = undefined; // Not supported.
+    if (typeof rounds === 'function')
+        callback = rounds,
+        rounds = undefined;
+    if (typeof rounds === 'undefined')
+        rounds = GENSALT_DEFAULT_LOG2_ROUNDS;
+    else if (typeof rounds !== 'number')
+        throw Error("illegal arguments: "+(typeof rounds));
+
+    function _async(callback) {
+        nextTick(function() { // Pretty thin, but salting is fast enough
+            try {
+                callback(null, bcrypt.genSaltSync(rounds));
+            } catch (err) {
+                callback(err);
+            }
+        });
+    }
+
+    if (callback) {
+        if (typeof callback !== 'function')
+            throw Error("Illegal callback: "+typeof(callback));
+        _async(callback);
+    } else
+        return new Promise(function(resolve, reject) {
+            _async(function(err, res) {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+                resolve(res);
+            });
+        });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Usage - Async
+-------------
+To hash a password:
+
+```javascript
+var bcrypt = require('bcryptjs');
+bcrypt.<span class="apidocCodeKeywordSpan">genSalt</span>(10, function(err, salt) {
+    bcrypt.hash("B4c0/\/", salt, function(err, hash) {
+        // Store hash in your password DB.
+    });
+});
+```
+
+To check a password:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bcryptjs.genSaltSync" id="apidoc.element.bcryptjs.genSaltSync">
+        function <span class="apidocSignatureSpan">bcryptjs.</span>genSaltSync
+        <span class="apidocSignatureSpan">(rounds, seed_length)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">genSaltSync = function (rounds, seed_length) {
+    rounds = rounds || GENSALT_DEFAULT_LOG2_ROUNDS;
+    if (typeof rounds !== 'number')
+        throw Error("Illegal arguments: "+(typeof rounds)+", "+(typeof seed_length));
+    if (rounds &lt; 4)
+        rounds = 4;
+    else if (rounds &gt; 31)
+        rounds = 31;
+    var salt = [];
+    salt.push("$2a$");
+    if (rounds &lt; 10)
+        salt.push("0");
+    salt.push(rounds.toString());
+    salt.push('$');
+    salt.push(base64_encode(random(BCRYPT_SALT_LEN), BCRYPT_SALT_LEN)); // May throw
+    return salt.join('');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Usage - Sync
+------------
+To hash a password:
+
+```javascript
+var bcrypt = require('bcryptjs');
+var salt = bcrypt.<span class="apidocCodeKeywordSpan">genSaltSync</span>(10);
+var hash = bcrypt.hashSync("B4c0/\/", salt);
+// Store hash in your password DB.
+```
+
+To check a password:
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bcryptjs.getRounds" id="apidoc.element.bcryptjs.getRounds">
+        function <span class="apidocSignatureSpan">bcryptjs.</span>getRounds
+        <span class="apidocSignatureSpan">(hash)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRounds = function (hash) {
+    if (typeof hash !== "string")
+        throw Error("Illegal arguments: "+(typeof hash));
+    return parseInt(hash.split("$")[2], 10);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bcryptjs.getSalt" id="apidoc.element.bcryptjs.getSalt">
+        function <span class="apidocSignatureSpan">bcryptjs.</span>getSalt
+        <span class="apidocSignatureSpan">(hash)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSalt = function (hash) {
+    if (typeof hash !== 'string')
+        throw Error("Illegal arguments: "+(typeof hash));
+    if (hash.length !== 60)
+        throw Error("Illegal hash length: "+hash.length+" != 60");
+    return hash.substring(0, 29);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bcryptjs.hash" id="apidoc.element.bcryptjs.hash">
+        function <span class="apidocSignatureSpan">bcryptjs.</span>hash
+        <span class="apidocSignatureSpan">(s, salt, callback, progressCallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hash = function (s, salt, callback, progressCallback) {
+
+    function _async(callback) {
+        if (typeof s === 'string' &amp;&amp; typeof salt === 'number')
+            bcrypt.genSalt(salt, function(err, salt) {
+                _hash(s, salt, callback, progressCallback);
+            });
+        else if (typeof s === 'string' &amp;&amp; typeof salt === 'string')
+            _hash(s, salt, callback, progressCallback);
+        else
+            nextTick(callback.bind(this, Error("Illegal arguments: "+(typeof s)+', '+(typeof salt))));
+    }
+
+    if (callback) {
+        if (typeof callback !== 'function')
+            throw Error("Illegal callback: "+typeof(callback));
+        _async(callback);
+    } else
+        return new Promise(function(resolve, reject) {
+            _async(function(err, res) {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+                resolve(res);
+            });
+        });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Usage - Async
+-------------
+To hash a password:
+
+```javascript
+var bcrypt = require('bcryptjs');
+bcrypt.genSalt(10, function(err, salt) {
+    bcrypt.<span class="apidocCodeKeywordSpan">hash</span>("B4c0/\/", salt, function(err, hash) {
+        // Store hash in your password DB.
+    });
+});
+```
+
+To check a password:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bcryptjs.hashSync" id="apidoc.element.bcryptjs.hashSync">
+        function <span class="apidocSignatureSpan">bcryptjs.</span>hashSync
+        <span class="apidocSignatureSpan">(s, salt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hashSync = function (s, salt) {
+    if (typeof salt === 'undefined')
+        salt = GENSALT_DEFAULT_LOG2_ROUNDS;
+    if (typeof salt === 'number')
+        salt = bcrypt.genSaltSync(salt);
+    if (typeof s !== 'string' || typeof salt !== 'string')
+        throw Error("Illegal arguments: "+(typeof s)+', '+(typeof salt));
+    return _hash(s, salt);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Usage - Sync
+------------
+To hash a password:
+
+```javascript
+var bcrypt = require('bcryptjs');
+var salt = bcrypt.genSaltSync(10);
+var hash = bcrypt.<span class="apidocCodeKeywordSpan">hashSync</span>("B4c0/\/", salt);
+// Store hash in your password DB.
+```
+
+To check a password:
+
+```javascript
+// Load hash from your password DB.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bcryptjs.setRandomFallback" id="apidoc.element.bcryptjs.setRandomFallback">
+        function <span class="apidocSignatureSpan">bcryptjs.</span>setRandomFallback
+        <span class="apidocSignatureSpan">(random)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setRandomFallback = function (random) {
+    randomFallback = random;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
