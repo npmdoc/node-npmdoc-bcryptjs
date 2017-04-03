@@ -603,8 +603,12 @@ local.templateApidocMd = '\
             );
             local.objectSetDefault(options, {
                 env: {},
-                packageJson: JSON.parse(readExample('package.json'))
+                packageJson: {}
             });
+            try {
+                options.packageJson = JSON.parse(readExample('package.json'));
+            } catch (ignore) {
+            }
             Object.keys(options.packageJson).forEach(function (key) {
                 if (key[0] === '_') {
                     delete options.packageJson[key];
@@ -699,8 +703,8 @@ local.templateApidocMd = '\
                     ].some(function (name) {
                         tmp.skip = local.path.extname(file) !== '.js' ||
                             file.indexOf(options.packageJson.main) >= 0 ||
-                            new RegExp('(?:\\b|_)(?:archive|artifact|assets|' +
-                                'bin|bower_component|build|' +
+                            new RegExp('(?:\\b|_)(?:archive|artifact|asset|' +
+                                'bin|bower_components|build|' +
                                 'cli|coverage' +
                                 'doc|dist|' +
                                 'example|external|' +
@@ -711,7 +715,7 @@ local.templateApidocMd = '\
                                 'node_modules|' +
                                 'rollup|' +
                                 'test|tmp|' +
-                                'vendor)(?:\\b|_)').test(file.toLowerCase()) ||
+                                'vendor)s{0,1}(?:\\b|_)').test(file.toLowerCase()) ||
                             module[name];
                         return tmp.skip;
                     });
